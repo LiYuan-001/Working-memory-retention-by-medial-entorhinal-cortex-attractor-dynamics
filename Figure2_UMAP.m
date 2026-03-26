@@ -8,7 +8,7 @@
 clear all
 close all
 
-codePath = 'C:\Users\Li\Documents\MATLAB\DualProbe\CellProperty\Local\MEC_manuscript_code';
+codePath = 'C:\Users\Li\Documents\MATLAB\DualProbe\CellProperty\Local\MEC_manuscript_code'; % change the folder to your local path
 dataFolder = fullfile(codePath,'Data','1146_20240710');
 addpath(genpath(codePath));
 
@@ -192,8 +192,7 @@ subplot(2,5,1)
 colorx = (posX_allPos - min(posX_allPos)) / (max(posX_allPos) - min(posX_allPos));
 colory = (posY_allPos - min(posY_allPos)) / (max(posY_allPos) - min(posY_allPos));
 RGB = [colorx',colory',ones(size(colory'))*0.7];
-scatter(posX_allPos, posY_allPos, 10, RGB, 'filled');
-hold on
+scatter(posX_allPos, posY_allPos, 10, RGB, 'filled');hold on
 scatter(posX_allPos(delayLabel_on_Ind==1), posY_allPos(delayLabel_on_Ind==1), 30, [0.4,0.4,0.4], 'filled');
 set(gca,'YDir','Reverse')
 TITLE1 = 'Figure 8 maze';
